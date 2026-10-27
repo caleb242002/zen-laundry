@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- BEFORE LAUNCH: replace https://YOUR-DOMAIN with the confirmed production domain. -->
+<!-- BEFORE LAUNCH: replace https://zen-laundry-theta.vercel.app with the confirmed production domain. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://YOUR-DOMAIN/</loc><priority>1.0</priority></url>
-  <url><loc>https://YOUR-DOMAIN/services.html</loc><priority>0.9</priority></url>
-  <url><loc>https://YOUR-DOMAIN/corporate.html</loc><priority>0.8</priority></url>
-  <url><loc>https://YOUR-DOMAIN/book-pickup.html</loc><priority>0.9</priority></url>
-  <url><loc>https://YOUR-DOMAIN/about.html</loc><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN/contact.html</loc><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN/track.html</loc><priority>0.5</priority></url>
-  <url><loc>https://YOUR-DOMAIN/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://zen-laundry-theta.vercel.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://zen-laundry-theta.vercel.app/services.html</loc><priority>0.9</priority></url>
+  <url><loc>https://zen-laundry-theta.vercel.app/corporate.html</loc><priority>0.8</priority></url>
+  <url><loc>https://zen-laundry-theta.vercel.app/book-pickup.html</loc><priority>0.9</priority></url>
+  <url><loc>https://zen-laundry-theta.vercel.app/about.html</loc><priority>0.6</priority></url>
+  <url><loc>https://zen-laundry-theta.vercel.app/contact.html</loc><priority>0.7</priority></url>
+  <url><loc>https://zen-laundry-theta.vercel.app/track.html</loc><priority>0.5</priority></url>
+  <url><loc>https://zen-laundry-theta.vercel.app/privacy.html</loc><priority>0.3</priority></url>
 </urlset>

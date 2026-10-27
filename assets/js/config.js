@@ -25,7 +25,7 @@ window.SITE_CONFIG = {
 
   /* Production domain, e.g. "https://www.zenlaundry.example". No trailing slash.
      When set, canonical and Open Graph URLs are added automatically. */
-  siteUrl: null,
+  siteUrl: "https://zen-laundry-theta.vercel.app",
 
   contact: {
     /* Phone as it should be displayed, e.g. "0800 000 0000" */
