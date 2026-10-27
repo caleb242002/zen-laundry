@@ -1,0 +1,9 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.log
+
+# Vercel
+.vercel

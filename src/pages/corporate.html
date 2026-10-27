@@ -1,0 +1,219 @@
+<!--meta
+title: Corporate Laundry Services | Request a Quote | Zen Laundry
+description: Laundry support for businesses and organisations. Tell Zen Laundry about your garment and linen care requirements and request a corporate quote.
+active: corporate
+preload: corporate
+-->
+
+  <main id="main">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container split">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><span aria-current="page">Corporate Laundry</span></li>
+            </ol>
+          </nav>
+          <p class="eyebrow">For businesses and organisations</p>
+          <h1 id="page-title">Corporate Laundry Solutions</h1>
+          <p>Professional laundry support for businesses that need dependable garment and linen care. Tell us about your organisation's requirements and we'll prepare a quotation.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#quote">Request a Corporate Quote {{icon:arrow-right}}</a>
+            <a class="btn btn-secondary" data-link="phone" data-label="Phone number — enables call button">{{icon:phone}} Call us</a>
+          </div>
+        </div>
+        <div class="split-media">
+          <img src="assets/images/corporate-800.webp"
+               srcset="assets/images/corporate-800.webp 800w, assets/images/corporate-1400.webp 1400w"
+               sizes="(min-width: 900px) 50vw, 100vw" width="800" height="533" fetchpriority="high" decoding="async"
+               alt="A row of commercial washing machines in a clean laundry facility">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="offer-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">What we offer</p>
+          <h2 id="offer-title">Laundry Support for Your Organisation.</h2>
+          <p>Zen Laundry offers garment and linen care for businesses and organisations. Every organisation is different, so we start by understanding what you need.</p>
+        </div>
+
+        <div class="feature-grid cols-3">
+          <div class="feature reveal">
+            <span class="feature-icon">{{icon:shirt}}</span>
+            <h3>Garment care</h3>
+            <p>Washing, ironing and dry cleaning for staff clothing and other garments, according to their care requirements.</p>
+          </div>
+          <div class="feature reveal">
+            <span class="feature-icon">{{icon:layers}}</span>
+            <h3>Linen and textiles</h3>
+            <p>Cleaning for linen, bedding and other textiles your organisation uses.</p>
+          </div>
+          <div class="feature reveal">
+            <span class="feature-icon">{{icon:clipboard}}</span>
+            <h3>Tailored quotation</h3>
+            <p>A quotation based on the items, services and volume your organisation needs.</p>
+          </div>
+        </div>
+
+        <div data-config-wrap style="margin-top: 2rem;">
+          <h3>Organisations we work with</h3>
+          <ul class="service-nav" data-config-list="operations.corporateAudiences" data-label="Business categories served (e.g. offices, hospitality, schools)"></ul>
+        </div>
+        <p class="dev-note" data-dev-only>Confirm Zen Laundry's corporate service types and operational capabilities (e.g. recurring collections, volumes handled, industries served) before adding them here. Do not claim contracts, bulk capacity or fixed schedules until confirmed.</p>
+      </div>
+    </section>
+
+    <section class="section section-pale" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">How enquiries work</p>
+          <h2 id="process-title">From Enquiry to Quotation.</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <div class="step-top">
+              <span class="step-icon">{{icon:clipboard}}</span>
+              <span class="step-num" aria-hidden="true">01</span>
+            </div>
+            <h3><span class="visually-hidden">Step 1: </span>Tell us your needs</h3>
+            <p>Complete the quote form with your organisation's details and laundry requirements.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step-top">
+              <span class="step-icon">{{icon:phone}}</span>
+              <span class="step-num" aria-hidden="true">02</span>
+            </div>
+            <h3><span class="visually-hidden">Step 2: </span>We get in touch</h3>
+            <p>Our team reviews your enquiry and contacts you to discuss the details.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step-top">
+              <span class="step-icon">{{icon:check}}</span>
+              <span class="step-num" aria-hidden="true">03</span>
+            </div>
+            <h3><span class="visually-hidden">Step 3: </span>Receive your quote</h3>
+            <p>We prepare a quotation based on what your organisation needs.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="quote" aria-labelledby="quote-title">
+      <div class="container form-layout">
+        <div class="form-card">
+          <h2 id="quote-title">Request a Corporate Quote</h2>
+          <p class="form-intro">Fields marked <span class="req" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+
+          <form id="corporate-form" data-form="corporate" data-require-one-of="email,phone" novalidate>
+            <div class="error-summary" tabindex="-1" role="alert" hidden>
+              <h3>Please correct the following:</h3>
+              <ul></ul>
+            </div>
+
+            <input type="hidden" name="_subject" value="New corporate laundry enquiry — Zen Laundry website">
+            <input type="hidden" name="form" value="Corporate quote">
+            <div class="honeypot" aria-hidden="true">
+              <label for="corp-website">Leave this field empty</label>
+              <input type="text" id="corp-website" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-grid">
+              <div class="form-grid two">
+                <div class="field">
+                  <label class="field-label" for="org-name">Organisation name <span class="req" aria-hidden="true">*</span></label>
+                  <input class="input" id="org-name" name="organisation" type="text" autocomplete="organization" required
+                         aria-describedby="org-name-error" data-error-msg="Please enter your organisation's name.">
+                  <p class="field-error" id="org-name-error" aria-live="polite"></p>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="contact-name">Contact person <span class="req" aria-hidden="true">*</span></label>
+                  <input class="input" id="contact-name" name="contact_person" type="text" autocomplete="name" required
+                         aria-describedby="contact-name-error" data-error-msg="Please enter the contact person's name.">
+                  <p class="field-error" id="contact-name-error" aria-live="polite"></p>
+                </div>
+              </div>
+
+              <div>
+                <p class="hint" id="corp-oneof-hint">Please provide a business email, a phone number, or both.</p>
+                <div class="form-grid two" style="margin-top: 0.75rem;">
+                  <div class="field">
+                    <label class="field-label" for="corp-email">Business email</label>
+                    <input class="input" id="corp-email" name="email" type="email" autocomplete="email" inputmode="email"
+                           aria-describedby="corp-oneof-hint corp-email-error corporate-form-oneof-error">
+                    <p class="field-error" id="corp-email-error" aria-live="polite"></p>
+                  </div>
+                  <div class="field">
+                    <label class="field-label" for="corp-phone">Telephone</label>
+                    <input class="input" id="corp-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" data-validate="phone"
+                           aria-describedby="corp-oneof-hint corp-phone-error corporate-form-oneof-error">
+                    <p class="field-error" id="corp-phone-error" aria-live="polite"></p>
+                  </div>
+                </div>
+                <p class="field-error" id="corporate-form-oneof-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="business-type">Type of business <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="business-type" name="business_type" type="text" required
+                       aria-describedby="business-type-hint business-type-error" data-error-msg="Please tell us your type of business.">
+                <p class="hint" id="business-type-hint">For example: office, hotel, restaurant or school.</p>
+                <p class="field-error" id="business-type-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="requirements">Laundry requirements <span class="req" aria-hidden="true">*</span></label>
+                <textarea class="textarea" id="requirements" name="requirements" required
+                          aria-describedby="requirements-hint requirements-error"
+                          data-error-msg="Please describe your laundry requirements."></textarea>
+                <p class="hint" id="requirements-hint">For example: the types of items (uniforms, linen, towels), the services needed and how often.</p>
+                <p class="field-error" id="requirements-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="volume">Estimated volume <span class="optional">(optional)</span></label>
+                <input class="input" id="volume" name="estimated_volume" type="text" aria-describedby="volume-hint">
+                <p class="hint" id="volume-hint">For example: number of items or bags per week or month.</p>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="corp-info">Additional information <span class="optional">(optional)</span></label>
+                <textarea class="textarea" id="corp-info" name="additional_information"></textarea>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <button class="btn btn-primary btn-block" type="submit">Send Quote Request</button>
+              <p class="form-legal">We'll use these details only to respond to your enquiry. See our <a href="privacy.html">Privacy Policy</a>.</p>
+            </div>
+
+            <div class="form-status" role="status" tabindex="-1" hidden></div>
+          </form>
+        </div>
+
+        <aside class="aside-stack" aria-label="Other ways to enquire">
+          <div class="aside-card">
+            <h3>What happens next?</h3>
+            <ol class="mini-steps">
+              <li><div><strong>We receive your enquiry</strong>Your details are sent directly to Zen Laundry.</div></li>
+              <li><div><strong>We contact you</strong>We'll reach out to discuss your requirements.</div></li>
+              <li><div><strong>You get a quotation</strong>Based on your organisation's needs.</div></li>
+            </ol>
+          </div>
+          <div class="aside-card" data-requires="contact.whatsapp,contact.phoneTel">
+            <h3>Prefer to talk?</h3>
+            <p>Speak to us directly about your organisation's laundry needs.</p>
+            <div class="aside-stack" style="gap: 0.75rem;">
+              <a class="btn btn-primary" data-link="whatsapp" data-label="WhatsApp number" data-wa-message="Hello Zen Laundry, I'd like to discuss corporate laundry for my organisation.">{{icon:chat}} Chat on WhatsApp</a>
+              <a class="btn btn-secondary" data-link="phone" data-label="Phone number">{{icon:phone}} Call us</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>

@@ -1,0 +1,142 @@
+<!--meta
+title: Contact Zen Laundry | Phone, WhatsApp, Email & Opening Hours
+description: Get in touch with Zen Laundry by phone, WhatsApp, email or our contact form. Find our address, opening hours and service-area information.
+active: contact
+-->
+
+  <main id="main">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><span aria-current="page">Contact</span></li>
+          </ol>
+        </nav>
+        <h1 id="page-title">Contact Zen Laundry</h1>
+        <p>Have a question about our services, pricing or pickup in your area? Get in touch and we'll be happy to help.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="form-title">
+      <div class="container form-layout">
+        <div class="form-card">
+          <h2 id="form-title">Send Us a Message</h2>
+          <p class="form-intro">Fields marked <span class="req" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required. To request a laundry service, use our <a href="book-pickup.html">Book a Pickup form</a>.</p>
+
+          <form id="contact-form" data-form="contact" data-require-one-of="email,phone" novalidate>
+            <div class="error-summary" tabindex="-1" role="alert" hidden>
+              <h3>Please correct the following:</h3>
+              <ul></ul>
+            </div>
+
+            <input type="hidden" name="_subject" value="New contact message — Zen Laundry website">
+            <input type="hidden" name="form" value="Contact">
+            <div class="honeypot" aria-hidden="true">
+              <label for="ct-website">Leave this field empty</label>
+              <input type="text" id="ct-website" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label class="field-label" for="ct-name">Your name <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="ct-name" name="name" type="text" autocomplete="name" required
+                       aria-describedby="ct-name-error" data-error-msg="Please enter your name.">
+                <p class="field-error" id="ct-name-error" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <p class="hint" id="ct-oneof-hint">Please provide an email address, a phone number, or both, so we can reply.</p>
+                <div class="form-grid two" style="margin-top: 0.75rem;">
+                  <div class="field">
+                    <label class="field-label" for="ct-email">Email address</label>
+                    <input class="input" id="ct-email" name="email" type="email" autocomplete="email" inputmode="email"
+                           aria-describedby="ct-oneof-hint ct-email-error contact-form-oneof-error">
+                    <p class="field-error" id="ct-email-error" aria-live="polite"></p>
+                  </div>
+                  <div class="field">
+                    <label class="field-label" for="ct-phone">Phone number</label>
+                    <input class="input" id="ct-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" data-validate="phone"
+                           aria-describedby="ct-oneof-hint ct-phone-error contact-form-oneof-error">
+                    <p class="field-error" id="ct-phone-error" aria-live="polite"></p>
+                  </div>
+                </div>
+                <p class="field-error" id="contact-form-oneof-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="ct-message">Message <span class="req" aria-hidden="true">*</span></label>
+                <textarea class="textarea" id="ct-message" name="message" required
+                          aria-describedby="ct-message-error" data-error-msg="Please enter your message."></textarea>
+                <p class="field-error" id="ct-message-error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <button class="btn btn-primary btn-block" type="submit">Send Message</button>
+              <p class="form-legal">We'll use your details only to respond to your message. See our <a href="privacy.html">Privacy Policy</a>.</p>
+            </div>
+
+            <div class="form-status" role="status" tabindex="-1" hidden></div>
+          </form>
+        </div>
+
+        <aside class="aside-stack" aria-label="Contact details">
+          <div class="aside-card">
+            <h3>Contact details</h3>
+            <ul class="contact-list">
+              <li class="contact-item" data-config-wrap>
+                <span class="contact-item-icon">{{icon:phone}}</span>
+                <div><p><strong>Phone</strong></p><a data-link="phone" data-link-text="contact.phoneDisplay" data-label="Phone number">Call us</a></div>
+              </li>
+              <li class="contact-item" data-config-wrap>
+                <span class="contact-item-icon">{{icon:chat}}</span>
+                <div><p><strong>WhatsApp</strong></p><a data-link="whatsapp" data-label="WhatsApp number" data-wa-message="Hello Zen Laundry, I'd like to make an enquiry.">Chat on WhatsApp</a></div>
+              </li>
+              <li class="contact-item" data-config-wrap>
+                <span class="contact-item-icon">{{icon:mail}}</span>
+                <div><p><strong>Email</strong></p><a data-link="email" data-link-text="contact.email" data-label="Email address">Email us</a></div>
+              </li>
+              <li class="contact-item" data-config-wrap>
+                <span class="contact-item-icon">{{icon:pin}}</span>
+                <div>
+                  <p><strong>Address</strong></p>
+                  <p data-config="location.address" data-label="Physical address"></p>
+                  <a data-link="map" data-label="Google Maps link" data-config-self>Get directions</a>
+                </div>
+              </li>
+              <li class="contact-item" data-config-wrap>
+                <span class="contact-item-icon">{{icon:clock}}</span>
+                <div><p><strong>Opening hours</strong></p><ul class="hours-list" data-config-list="hours" data-label="Opening hours"></ul></div>
+              </li>
+              <li class="contact-item" data-config-wrap>
+                <span class="contact-item-icon">{{icon:truck}}</span>
+                <div><p><strong>Pickup and delivery areas</strong></p><p data-config="location.serviceAreas" data-label="Service areas"></p></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="aside-card" data-social-list>
+            <h3>Follow us</h3>
+            <ul class="social-links" style="margin-top: 0;">
+              <li data-config-wrap><a class="btn btn-secondary btn-sm" data-link="social.instagram" data-label="Instagram link">Instagram</a></li>
+              <li data-config-wrap><a class="btn btn-secondary btn-sm" data-link="social.facebook" data-label="Facebook link">Facebook</a></li>
+              <li data-config-wrap><a class="btn btn-secondary btn-sm" data-link="social.tiktok" data-label="TikTok link">TikTok</a></li>
+              <li data-config-wrap><a class="btn btn-secondary btn-sm" data-link="social.x" data-label="X link">X</a></li>
+              <li data-config-wrap><a class="btn btn-secondary btn-sm" data-link="social.linkedin" data-label="LinkedIn link">LinkedIn</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-pale" aria-labelledby="map-title" data-requires="location.mapEmbedUrl">
+      <div class="container">
+        <h2 id="map-title">Find Us</h2>
+        <div data-map hidden></div>
+        <p class="dev-note" data-dev-only>A map will be added here once the physical address is confirmed (set location.mapEmbedUrl in config.js).</p>
+      </div>
+    </section>
+
+  </main>

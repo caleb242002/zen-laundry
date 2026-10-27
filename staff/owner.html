@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Owner Dashboard | Zen Laundry</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0849B3">
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="ops.css">
+  <script src="../assets/js/config.js" defer></script>
+  <script src="ops.js" defer></script>
+  <script src="owner.js" defer></script>
+</head>
+<body class="ops">
+
+  <header class="ops-header">
+    <div class="ops-header-inner">
+      <span class="brand-name">Zen <span>Laundry</span></span>
+      <span class="ops-tag">Owner</span>
+      <div class="ops-user" id="user-bar" hidden>
+        <span id="user-name"></span>
+        <button class="btn btn-secondary btn-sm" type="button" id="logout">Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="ops-center" id="login" hidden>
+    <div class="ops-card narrow">
+      <h1>Owner sign in</h1>
+      <p>This dashboard is for the owner only.</p>
+      <form novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label class="field-label" for="login-staff">Name</label>
+            <select class="select" id="login-staff" name="staffId"><option value="">Loading…</option></select>
+          </div>
+          <div class="field">
+            <label class="field-label" for="login-pin">PIN</label>
+            <input class="input pin-input" id="login-pin" name="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8">
+          </div>
+          <p class="login-msg form-status is-error" role="alert" hidden></p>
+          <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <main id="app" class="ops-main" hidden>
+    <nav class="ops-tabs" aria-label="Dashboard sections">
+      <button type="button" class="ops-tab" data-tab="overview" aria-selected="true">Overview</button>
+      <button type="button" class="ops-tab" data-tab="prices" aria-selected="false">Prices</button>
+      <button type="button" class="ops-tab" data-tab="staff" aria-selected="false">Staff</button>
+      <button type="button" class="ops-tab" data-tab="settings" aria-selected="false">Settings</button>
+    </nav>
+
+    <!-- Overview -->
+    <section class="ops-panel" data-panel="overview">
+      <form id="range-form" class="range-bar" novalidate>
+        <div class="seg" role="group" aria-label="Quick ranges">
+          <button type="button" data-range="today" aria-pressed="true">Today</button>
+          <button type="button" data-range="yesterday" aria-pressed="false">Yesterday</button>
+          <button type="button" data-range="7" aria-pressed="false">7 days</button>
+          <button type="button" data-range="30" aria-pressed="false">30 days</button>
+          <button type="button" data-range="month" aria-pressed="false">This month</button>
+        </div>
+        <label class="visually-hidden" for="r-from">From</label>
+        <input class="input input-sm" type="date" id="r-from" name="from">
+        <label class="visually-hidden" for="r-to">To</label>
+        <input class="input input-sm" type="date" id="r-to" name="to">
+        <button class="btn btn-primary btn-sm" type="submit">Show</button>
+      </form>
+
+      <div id="report" aria-live="polite"></div>
+    </section>
+
+    <!-- Prices -->
+    <section class="ops-panel" data-panel="prices" hidden>
+      <div class="ops-card">
+        <h2>Price list</h2>
+        <p class="hint">Only you can change prices. Staff pick items from this list and can't type their own price. Every change is logged.</p>
+        <form id="price-form" class="inline-form mt" novalidate>
+          <input type="hidden" name="id">
+          <div class="field"><label class="field-label" for="p-item">Item</label><input class="input" id="p-item" name="itemName" placeholder="e.g. Shirt (wash &amp; iron)"></div>
+          <div class="field"><label class="field-label" for="p-cat">Category</label><input class="input" id="p-cat" name="category" placeholder="e.g. Washing &amp; Ironing" list="cat-list"><datalist id="cat-list"></datalist></div>
+          <div class="field"><label class="field-label" for="p-price">Price</label><input class="input" id="p-price" name="price" type="number" min="0" step="any" inputmode="decimal"></div>
+          <label class="check"><input type="checkbox" name="active" checked> On sale</label>
+          <div class="btn-row"><button class="btn btn-primary" type="submit">Save item</button><button class="btn btn-secondary" type="reset">Clear</button></div>
+        </form>
+        <div class="table-wrap mt"><table class="data"><thead><tr><th>Item</th><th>Category</th><th class="num">Price</th><th>Status</th><th></th></tr></thead><tbody id="price-rows"></tbody></table></div>
+      </div>
+    </section>
+
+    <!-- Staff -->
+    <section class="ops-panel" data-panel="staff" hidden>
+      <div class="ops-card">
+        <h2>Staff &amp; PINs</h2>
+        <p class="hint"><strong>Staff</strong> record orders and payments. <strong>Managers</strong> can also approve discounts, voids and releasing unpaid laundry, but never their own. Give each person their own PIN and never share PINs. Deactivate leavers straight away.</p>
+        <form id="staff-form" class="inline-form mt" novalidate>
+          <input type="hidden" name="id">
+          <div class="field"><label class="field-label" for="s-name">Name</label><input class="input" id="s-name" name="name"></div>
+          <div class="field"><label class="field-label" for="s-role">Role</label><select class="select" id="s-role" name="role"><option value="staff">Staff</option><option value="manager">Manager</option><option value="owner">Owner</option></select></div>
+          <div class="field"><label class="field-label" for="s-pin">PIN <span class="optional" id="s-pin-hint">(4–8 digits)</span></label><input class="input" id="s-pin" name="pin" inputmode="numeric" autocomplete="off" maxlength="8"></div>
+          <label class="check"><input type="checkbox" name="active" checked> Active</label>
+          <div class="btn-row"><button class="btn btn-primary" type="submit">Save staff</button><button class="btn btn-secondary" type="reset">Clear</button></div>
+        </form>
+        <div class="table-wrap mt"><table class="data"><thead><tr><th>Name</th><th>Role</th><th>Status</th><th></th></tr></thead><tbody id="staff-rows"></tbody></table></div>
+      </div>
+    </section>
+
+    <!-- Settings -->
+    <section class="ops-panel" data-panel="settings" hidden>
+      <div class="ops-card">
+        <h2>Settings</h2>
+        <form id="settings-form" class="form-grid mt" novalidate>
+          <div class="form-grid two">
+            <div class="field"><label class="field-label" for="st-name">Business name on receipts</label><input class="input" id="st-name" name="businessName"></div>
+            <div class="field"><label class="field-label" for="st-cur">Currency symbol</label><input class="input" id="st-cur" name="currency"></div>
+            <div class="field"><label class="field-label" for="st-cc">Country dialling code (for WhatsApp)</label><input class="input" id="st-cc" name="countryCode" inputmode="numeric"></div>
+            <div class="field"><label class="field-label" for="st-var">Flag drawer differences of (or more)</label><input class="input" id="st-var" name="varianceAlert" type="number" min="0" inputmode="decimal"></div>
+            <div class="field"><label class="field-label" for="st-disc">Flag discounts above (% of order)</label><input class="input" id="st-disc" name="largeDiscountPercent" type="number" min="0" max="100"></div>
+            <div class="field"><label class="field-label" for="st-days">Flag ready orders uncollected after (days)</label><input class="input" id="st-days" name="uncollectedDays" type="number" min="1"></div>
+          </div>
+          <div class="field"><label class="field-label" for="st-notice">Payment notice (on every receipt)</label><input class="input" id="st-notice" name="paymentNotice"><p class="hint">Tell customers how to pay safely, e.g. the official account name. This stops staff giving out their personal account numbers.</p></div>
+          <div class="field"><label class="field-label" for="st-footer">Receipt footer</label><input class="input" id="st-footer" name="receiptFooter"></div>
+          <div><button class="btn btn-primary" type="submit">Save settings</button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

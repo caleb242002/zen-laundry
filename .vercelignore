@@ -1,0 +1,5 @@
+# Source files that don't need to be public (the root .html files are the built site)
+src/
+backend/
+build.py
+README.md

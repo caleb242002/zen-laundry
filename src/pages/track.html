@@ -1,0 +1,58 @@
+<!--meta
+title: Track Your Order | Zen Laundry
+description: Check the status of your Zen Laundry order, what you were charged and what you've paid, using the order number on your receipt.
+active: track
+-->
+
+  <main id="main">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><span aria-current="page">Track Your Order</span></li>
+          </ol>
+        </nav>
+        <h1 id="page-title">Track Your Order</h1>
+        <p>Enter the order number from your receipt to see whether your laundry is ready, what you were charged and what you've paid.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="track-title">
+      <div class="container form-layout">
+        <div class="form-card">
+          <h2 id="track-title">Find your order</h2>
+          <p class="form-intro">For your privacy, we also ask for the last 4 digits of the phone number you gave us.</p>
+
+          <form id="track-form" novalidate>
+            <div class="form-grid two">
+              <div class="field">
+                <label class="field-label" for="track-order">Order number</label>
+                <input class="input" id="track-order" name="orderNo" inputmode="numeric" autocomplete="off" placeholder="e.g. 1024">
+              </div>
+              <div class="field">
+                <label class="field-label" for="track-phone">Last 4 digits of your phone</label>
+                <input class="input" id="track-phone" name="phoneLast4" inputmode="numeric" autocomplete="off" maxlength="4">
+              </div>
+            </div>
+            <div class="form-footer">
+              <button class="btn btn-primary btn-block" type="submit">Check order</button>
+            </div>
+            <div class="form-status" role="status" tabindex="-1" hidden></div>
+          </form>
+
+          <div id="track-result" class="track-result" hidden></div>
+        </div>
+
+        <aside class="aside-stack" aria-label="About your receipt">
+          <div class="aside-card">
+            <h3>Always ask for your receipt</h3>
+            <p>Every order gets a numbered receipt, printed or sent to your WhatsApp. If the amount you paid doesn't match what you see here, or you didn't get a receipt, please let us know.</p>
+            <a class="btn btn-primary" href="contact.html">Contact us</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Counter | Zen Laundry Staff</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0849B3">
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="ops.css">
+  <script src="../assets/js/config.js" defer></script>
+  <script src="ops.js" defer></script>
+  <script src="counter.js" defer></script>
+</head>
+<body class="ops">
+
+  <header class="ops-header">
+    <div class="ops-header-inner">
+      <span class="brand-name">Zen <span>Laundry</span></span>
+      <span class="ops-tag">Counter</span>
+      <div class="ops-user" id="user-bar" hidden>
+        <span id="drawer-pill" class="pill"></span>
+        <span id="user-name"></span>
+        <button class="btn btn-secondary btn-sm" type="button" id="logout">Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sign in -->
+  <section class="ops-center" id="login" hidden>
+    <div class="ops-card narrow">
+      <h1>Staff sign in</h1>
+      <p>Use your own PIN. Everything you record is saved under your name.</p>
+      <form novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label class="field-label" for="login-staff">Name</label>
+            <select class="select" id="login-staff" name="staffId"><option value="">Loading…</option></select>
+          </div>
+          <div class="field">
+            <label class="field-label" for="login-pin">PIN</label>
+            <input class="input pin-input" id="login-pin" name="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8">
+          </div>
+          <p class="login-msg form-status is-error" role="alert" hidden></p>
+          <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Open drawer -->
+  <section class="ops-center" id="open-drawer" hidden>
+    <div class="ops-card narrow">
+      <h1>Open the cash drawer</h1>
+      <p>Count the cash in the drawer now. Orders and payments can only be recorded while the drawer is open.</p>
+      <form id="open-form" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label class="field-label" for="opening-float">Cash in drawer (opening float)</label>
+            <input class="input" id="opening-float" name="openingFloat" type="number" min="0" step="any" inputmode="decimal" required>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Open drawer</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <main id="app" class="ops-main" hidden>
+    <nav class="ops-tabs" aria-label="Counter sections">
+      <button type="button" class="ops-tab" data-tab="new" aria-selected="true">New order</button>
+      <button type="button" class="ops-tab" data-tab="orders" aria-selected="false">Find / collect</button>
+      <button type="button" class="ops-tab" data-tab="drawer" aria-selected="false">Drawer</button>
+    </nav>
+
+    <!-- New order -->
+    <section class="ops-panel" data-panel="new">
+      <form id="order-form" class="order-layout" novalidate>
+        <div class="ops-card">
+          <h2>Customer</h2>
+          <div class="form-grid two">
+            <div class="field">
+              <label class="field-label" for="c-name">Name</label>
+              <input class="input" id="c-name" name="customerName" autocomplete="off" required>
+            </div>
+            <div class="field">
+              <label class="field-label" for="c-phone">Phone (WhatsApp)</label>
+              <input class="input" id="c-phone" name="customerPhone" type="tel" inputmode="tel" autocomplete="off" required>
+            </div>
+          </div>
+
+          <h2 class="mt">Items</h2>
+          <input class="input" type="search" id="item-filter" placeholder="Search items…" aria-label="Search items">
+          <div id="price-list" class="price-list"></div>
+        </div>
+
+        <div class="ops-card cart-card">
+          <h2>Order summary</h2>
+          <ul id="cart" class="cart"><li class="muted">No items yet.</li></ul>
+          <dl class="totals">
+            <div><dt>Items</dt><dd id="t-count">0</dd></div>
+            <div><dt>Subtotal</dt><dd id="t-subtotal">₦0</dd></div>
+            <div id="t-discount-row" hidden><dt>Discount</dt><dd id="t-discount">₦0</dd></div>
+            <div class="grand"><dt>Total</dt><dd id="t-total">₦0</dd></div>
+          </dl>
+
+          <details class="disc">
+            <summary>Add a discount (needs manager approval)</summary>
+            <div class="form-grid">
+              <div class="field">
+                <label class="field-label" for="discount">Discount amount</label>
+                <input class="input" id="discount" name="discount" type="number" min="0" step="any" inputmode="decimal">
+              </div>
+              <div class="field">
+                <label class="field-label" for="discount-reason">Reason</label>
+                <input class="input" id="discount-reason" name="discountReason">
+              </div>
+            </div>
+          </details>
+
+          <div class="form-grid two mt">
+            <div class="field">
+              <label class="field-label" for="due-date">Ready by</label>
+              <input class="input" id="due-date" name="dueDate" type="date">
+            </div>
+            <div class="field">
+              <label class="field-label" for="notes">Notes <span class="optional">(optional)</span></label>
+              <input class="input" id="notes" name="notes" placeholder="Stains, delicate…">
+            </div>
+          </div>
+
+          <fieldset class="mt">
+            <legend>Payment</legend>
+            <div class="seg" role="radiogroup">
+              <label><input type="radio" name="method" value="cash" checked> Cash</label>
+              <label><input type="radio" name="method" value="transfer"> Transfer</label>
+              <label><input type="radio" name="method" value="pos"> POS</label>
+              <label><input type="radio" name="method" value="later"> Pay at collection</label>
+            </div>
+          </fieldset>
+          <div class="form-grid two" id="pay-fields">
+            <div class="field">
+              <label class="field-label" for="pay-amount">Amount received</label>
+              <input class="input" id="pay-amount" name="amount" type="number" min="0" step="any" inputmode="decimal">
+            </div>
+            <div class="field" id="ref-field" hidden>
+              <label class="field-label" for="pay-ref">Transfer / POS reference</label>
+              <input class="input" id="pay-ref" name="reference" autocomplete="off">
+            </div>
+          </div>
+          <p class="hint mt-sm" id="transfer-hint" hidden>Only accept transfers into the official business account. Check the alert on the shop phone before you save.</p>
+
+          <button class="btn btn-primary btn-block mt" type="submit">Save order &amp; issue ticket</button>
+        </div>
+      </form>
+
+      <div id="order-done" class="ops-center" hidden>
+        <div class="ops-card narrow done-card">
+          <p class="eyebrow">Order saved</p>
+          <p class="ticket-no" id="done-no"></p>
+          <p id="done-summary"></p>
+          <p class="tag-note">Write <strong id="done-tag"></strong> on the tag of <strong>every item</strong> before it goes to the wash.</p>
+          <div class="btn-col">
+            <a class="btn btn-primary" id="done-wa" target="_blank" rel="noopener">Send receipt on WhatsApp</a>
+            <button class="btn btn-secondary" type="button" id="done-print">Print receipt</button>
+            <button class="btn btn-secondary" type="button" id="done-new">Start a new order</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Find / collect -->
+    <section class="ops-panel" data-panel="orders" hidden>
+      <div class="ops-card">
+        <form id="search-form" class="search-row" novalidate>
+          <input class="input" type="search" name="query" placeholder="Order number, phone or name" aria-label="Find an order">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        <p class="hint mt-sm">Leave empty and press Search to list every order still in the shop.</p>
+        <div id="results" class="results"></div>
+      </div>
+      <div id="order-detail" class="ops-card mt" hidden></div>
+    </section>
+
+    <!-- Drawer -->
+    <section class="ops-panel" data-panel="drawer" hidden>
+      <div class="drawer-grid">
+        <div class="ops-card">
+          <h2>Cash taken out of the drawer</h2>
+          <p class="hint">Record every naira taken out (fuel, detergent, change run…). Unrecorded cash will show as a shortage.</p>
+          <form id="expense-form" class="form-grid mt" novalidate>
+            <div class="form-grid two">
+              <div class="field">
+                <label class="field-label" for="exp-amount">Amount</label>
+                <input class="input" id="exp-amount" name="amount" type="number" min="0" step="any" inputmode="decimal">
+              </div>
+              <div class="field">
+                <label class="field-label" for="exp-desc">What for?</label>
+                <input class="input" id="exp-desc" name="description">
+              </div>
+            </div>
+            <button class="btn btn-secondary" type="submit">Record cash out</button>
+          </form>
+          <ul id="expense-list" class="simple-list mt"></ul>
+        </div>
+
+        <div class="ops-card">
+          <h2>Close the drawer</h2>
+          <p class="hint" id="shift-info"></p>
+          <p>Count all the cash in the drawer and enter the total. You won't see the expected amount until you submit, so count carefully.</p>
+          <form id="close-form" class="form-grid mt" novalidate>
+            <div class="field">
+              <label class="field-label" for="counted">Cash counted</label>
+              <input class="input" id="counted" name="countedCash" type="number" min="0" step="any" inputmode="decimal">
+            </div>
+            <div class="field">
+              <label class="field-label" for="close-notes">Notes <span class="optional">(optional)</span></label>
+              <input class="input" id="close-notes" name="notes">
+            </div>
+            <button class="btn btn-primary" type="submit">Submit count &amp; close drawer</button>
+          </form>
+          <div id="close-result" hidden></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="approve-dialog" class="ops-dialog">
+    <form method="dialog" novalidate>
+      <h2>Manager approval</h2>
+      <p><span data-approve-what></span> must be approved by a manager or the owner. Hand them the device.</p>
+      <div class="form-grid">
+        <div class="field">
+          <label class="field-label" for="approver">Approver</label>
+          <select class="select" id="approver" name="approverId"></select>
+        </div>
+        <div class="field">
+          <label class="field-label" for="approver-pin">Their PIN</label>
+          <input class="input pin-input" id="approver-pin" name="approverPin" type="password" inputmode="numeric" autocomplete="off" maxlength="8">
+        </div>
+      </div>
+      <div class="btn-row mt">
+        <button class="btn btn-primary" type="submit">Approve</button>
+        <button class="btn btn-secondary" type="button" onclick="this.closest('dialog').close()">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="print-receipt" class="print-receipt" aria-hidden="true"></div>
+</body>
+</html>

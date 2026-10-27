@@ -1,0 +1,10 @@
+# Zen Laundry
+# BEFORE LAUNCH: replace https://YOUR-DOMAIN with the confirmed production domain.
+User-agent: *
+Allow: /
+Disallow: /src/
+Disallow: /build.py
+Disallow: /staff/
+Disallow: /backend/
+
+Sitemap: https://YOUR-DOMAIN/sitemap.xml

@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a Pickup | Laundry Request Form | Zen Laundry</title>
+  <meta name="description" content="Send Zen Laundry a laundry request. Choose your services, select pickup or walk-in, and we'll contact you to confirm the details.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0849B3">
+  <!-- Canonical + og:url are added automatically from SITE_CONFIG.siteUrl once the production domain is confirmed. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zen Laundry">
+  <meta property="og:title" content="Book a Pickup | Laundry Request Form | Zen Laundry">
+  <meta property="og:description" content="Send Zen Laundry a laundry request. Choose your services, select pickup or walk-in, and we'll contact you to confirm the details.">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Neatly folded clean laundry in a bright laundromat">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Zen Laundry — home">
+        <img class="brand-logo" src="assets/images/logo.png" alt="" width="44" height="44">
+        <span class="brand-name">Zen <span>Laundry</span></span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm header-cta-compact" href="book-pickup.html">Book a Pickup</a>
+        <a class="btn btn-primary header-cta-full" href="book-pickup.html">Book a Pickup</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <span class="icon-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span>
+          <span class="icon-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary btn-block" href="book-pickup.html">Book a Pickup</a>
+    </nav>
+  </header>
+<main id="main">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><span aria-current="page">Book a Pickup</span></li>
+          </ol>
+        </nav>
+        <h1 id="page-title">Book a Pickup</h1>
+        <p>Tell us what you need and how you'd like to get it to us. We'll review your request and contact you to confirm availability and arrangements.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="form-title">
+      <div class="container form-layout">
+        <div class="form-card">
+          <h2 id="form-title">Laundry Request Form</h2>
+          <p class="form-intro">Fields marked <span class="req" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required. Submitting this form sends a request — your pickup is confirmed once Zen Laundry contacts you.</p>
+
+          <form id="booking-form" data-form="booking" novalidate>
+            <div class="error-summary" tabindex="-1" role="alert" hidden>
+              <h3>Please correct the following:</h3>
+              <ul></ul>
+            </div>
+
+            <input type="hidden" name="_subject" value="New laundry request — Zen Laundry website">
+            <input type="hidden" name="form" value="Laundry request">
+            <div class="honeypot" aria-hidden="true">
+              <label for="bk-website">Leave this field empty</label>
+              <input type="text" id="bk-website" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label class="field-label" for="full-name">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="full-name" name="name" type="text" autocomplete="name" required
+                       aria-describedby="full-name-error" data-error-msg="Please enter your full name.">
+                <p class="field-error" id="full-name-error" aria-live="polite"></p>
+              </div>
+
+              <div class="form-grid two">
+                <div class="field">
+                  <label class="field-label" for="phone">Telephone number <span class="req" aria-hidden="true">*</span></label>
+                  <input class="input" id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required data-validate="phone"
+                         aria-describedby="phone-error" data-error-msg="Please enter your telephone number so we can confirm your request.">
+                  <p class="field-error" id="phone-error" aria-live="polite"></p>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="email">Email address <span class="optional">(optional)</span></label>
+                  <input class="input" id="email" name="email" type="email" autocomplete="email" inputmode="email"
+                         aria-describedby="email-error">
+                  <p class="field-error" id="email-error" aria-live="polite"></p>
+                </div>
+              </div>
+
+              <fieldset id="services-group" data-required-group aria-describedby="services-group-error"
+                        data-error-msg="Please choose at least one service.">
+                <legend>Service(s) needed <span class="req" aria-hidden="true">*</span></legend>
+                <div class="choice-grid two">
+                  <label class="choice"><input type="checkbox" id="svc-washing" name="services" value="Washing and Ironing" data-slug="washing-ironing"> Washing and Ironing</label>
+                  <label class="choice"><input type="checkbox" id="svc-dry" name="services" value="Dry Cleaning" data-slug="dry-cleaning"> Dry Cleaning</label>
+                  <label class="choice"><input type="checkbox" id="svc-duvets" name="services" value="Duvets and Bedsheets" data-slug="duvets-bedsheets"> Duvets and Bedsheets</label>
+                  <label class="choice"><input type="checkbox" id="svc-shoes" name="services" value="Shoe and Bag Cleaning" data-slug="shoe-bag-cleaning"> Shoe and Bag Cleaning</label>
+                  <label class="choice"><input type="checkbox" id="svc-pickup" name="services" value="Pickup and Delivery" data-slug="pickup-delivery"> Pickup and Delivery</label>
+                  <label class="choice"><input type="checkbox" id="svc-other" name="services" value="Not sure / other"> Not sure / other</label>
+                </div>
+                <p class="field-error" id="services-group-error" aria-live="polite"></p>
+                <p class="hint" style="margin-top: 0.5rem;">Need laundry for a business? Use our <a href="corporate.html">corporate quote form</a>.</p>
+              </fieldset>
+
+              <fieldset id="preference-group" data-required-group aria-describedby="preference-group-error"
+                        data-error-msg="Please choose pickup or walk-in.">
+                <legend>How would you like to get your laundry to us? <span class="req" aria-hidden="true">*</span></legend>
+                <div class="choice-grid two">
+                  <label class="choice">
+                    <input type="radio" id="pref-pickup" name="preference" value="pickup">
+                    <span class="choice-text">Request a pickup<small>Subject to availability in your area</small></span>
+                  </label>
+                  <label class="choice">
+                    <input type="radio" id="pref-walkin" name="preference" value="walk-in">
+                    <span class="choice-text">Walk-in drop-off<small>Bring your items to us</small></span>
+                  </label>
+                </div>
+                <p class="field-error" id="preference-group-error" aria-live="polite"></p>
+              </fieldset>
+
+              <div class="field" id="pickup-address-wrap" hidden>
+                <label class="field-label" for="address">Pickup address <span class="req" aria-hidden="true">*</span></label>
+                <textarea class="textarea" id="address" name="address" autocomplete="street-address" rows="3"
+                          data-required-if="preference=pickup" style="min-height: 96px;"
+                          aria-describedby="address-hint address-error" data-error-msg="Please enter the address we should collect from."></textarea>
+                <p class="hint" id="address-hint">Include a landmark if it helps us find you. We'll confirm whether pickup is available at this address.</p>
+                <p class="field-error" id="address-error" aria-live="polite"></p>
+              </div>
+
+              <div class="form-grid two">
+                <div class="field">
+                  <label class="field-label" for="preferred-date">Preferred date <span class="optional">(optional)</span></label>
+                  <input class="input" id="preferred-date" name="date" type="date" aria-describedby="schedule-hint preferred-date-error">
+                  <p class="field-error" id="preferred-date-error" aria-live="polite"></p>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="preferred-time">Preferred time <span class="optional">(optional)</span></label>
+                  <select class="select" id="preferred-time" name="time" aria-describedby="schedule-hint">
+                    <option value="">No preference</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                  </select>
+                </div>
+              </div>
+              <p class="hint" id="schedule-hint" style="margin-top: -0.75rem;">This is your preference only. We'll confirm the actual date and time with you.</p>
+
+              <div class="field">
+                <label class="field-label" for="instructions">Additional instructions <span class="optional">(optional)</span></label>
+                <textarea class="textarea" id="instructions" name="instructions" aria-describedby="instructions-hint"></textarea>
+                <p class="hint" id="instructions-hint">For example: number of items, stains to note, delicate fabrics or special care.</p>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <button class="btn btn-primary btn-block" type="submit">Send Laundry Request</button>
+              <p class="form-legal">We'll use your details only to respond to your request. See our <a href="privacy.html">Privacy Policy</a>.</p>
+            </div>
+
+            <div class="form-status" role="status" tabindex="-1" hidden></div>
+          </form>
+        </div>
+
+        <aside class="aside-stack" aria-label="About your request">
+          <div class="aside-card">
+            <h3>What happens next?</h3>
+            <ol class="mini-steps">
+              <li><div><strong>We receive your request</strong>Your details are sent directly to Zen Laundry.</div></li>
+              <li><div><strong>We contact you to confirm</strong>We'll confirm availability, timing and any applicable details.</div></li>
+              <li><div><strong>We take care of the rest</strong>Your laundry is collected or dropped off as agreed.</div></li>
+            </ol>
+          </div>
+          <div class="aside-card" data-requires="contact.whatsapp">
+            <h3>Prefer WhatsApp?</h3>
+            <p>Send your request as a WhatsApp message. Anything you've filled in above will be included to save you typing.</p>
+            <a class="btn btn-primary" id="booking-whatsapp" data-link="whatsapp" data-label="WhatsApp number" data-wa-message="Hello Zen Laundry, I'd like to request a laundry service."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg> Send via WhatsApp</a>
+          </div>
+          <div class="aside-card">
+            <h3>Have a question first?</h3>
+            <p>See our <a href="index.html#faq">frequently asked questions</a> or <a href="contact.html">contact us</a>.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Zen Laundry — home">
+            <img class="brand-logo" src="assets/images/logo.png" alt="" width="44" height="44" loading="lazy">
+            <span class="brand-name">Zen <span>Laundry</span></span>
+          </a>
+          <p>Fresh clothes, less stress. Laundry and garment care for individuals and businesses.</p>
+          <ul class="social-links" data-social-list aria-label="Zen Laundry on social media">
+            <li data-config-wrap><a data-link="social.instagram" data-label="Instagram link">Instagram</a></li>
+            <li data-config-wrap><a data-link="social.facebook" data-label="Facebook link">Facebook</a></li>
+            <li data-config-wrap><a data-link="social.tiktok" data-label="TikTok link">TikTok</a></li>
+            <li data-config-wrap><a data-link="social.x" data-label="X link">X</a></li>
+            <li data-config-wrap><a data-link="social.linkedin" data-label="LinkedIn link">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <nav aria-labelledby="footer-quick">
+          <h2 id="footer-quick">Quick links</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="corporate.html">Corporate Laundry</a></li>
+            <li><a href="book-pickup.html">Book a Pickup</a></li>
+            <li><a href="track.html">Track Your Order</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-labelledby="footer-services">
+          <h2 id="footer-services">Our services</h2>
+          <ul class="footer-links">
+            <li><a href="services.html#washing-ironing">Washing and Ironing</a></li>
+            <li><a href="services.html#pickup-delivery">Pickup and Delivery</a></li>
+            <li><a href="services.html#dry-cleaning">Dry Cleaning</a></li>
+            <li><a href="corporate.html">Corporate Laundry</a></li>
+            <li><a href="services.html#duvets-bedsheets">Duvets and Bedsheets</a></li>
+            <li><a href="services.html#shoe-bag-cleaning">Shoe and Bag Cleaning</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2>Get in touch</h2>
+          <ul class="footer-contact">
+            <li data-config-wrap><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a data-link="phone" data-link-text="contact.phoneDisplay" data-label="Phone number">Call us</a></li>
+            <li data-config-wrap><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg><a data-link="whatsapp" data-label="WhatsApp number" data-wa-message="Hello Zen Laundry, I'd like to make an enquiry.">Chat on WhatsApp</a></li>
+            <li data-config-wrap><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a data-link="email" data-link-text="contact.email" data-label="Email address">Email us</a></li>
+            <li data-config-wrap><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-config="location.address" data-label="Address"></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><a href="contact.html">Send us a message</a></li>
+            <li data-config-wrap><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><ul class="hours-list" data-config-list="hours" data-label="Opening hours"></ul></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> Zen Laundry. All rights reserved. Website by KINGSTECH.</p>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+</body>
+</html>

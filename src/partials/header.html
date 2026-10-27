@@ -1,0 +1,40 @@
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Zen Laundry — home">
+        <img class="brand-logo" src="assets/images/logo.png" alt="" width="44" height="44">
+        <span class="brand-name">Zen <span>Laundry</span></span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html"{{active:home}}>Home</a></li>
+          <li><a href="services.html"{{active:services}}>Services</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="about.html"{{active:about}}>About</a></li>
+          <li><a href="contact.html"{{active:contact}}>Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm header-cta-compact" href="book-pickup.html">Book a Pickup</a>
+        <a class="btn btn-primary header-cta-full" href="book-pickup.html">Book a Pickup</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <span class="icon-open">{{icon:menu}}</span>
+          <span class="icon-close">{{icon:close}}</span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+      <ul>
+        <li><a href="index.html"{{active:home}}>Home</a></li>
+        <li><a href="services.html"{{active:services}}>Services</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="about.html"{{active:about}}>About</a></li>
+        <li><a href="contact.html"{{active:contact}}>Contact</a></li>
+      </ul>
+      <a class="btn btn-primary btn-block" href="book-pickup.html">Book a Pickup</a>
+    </nav>
+  </header>
